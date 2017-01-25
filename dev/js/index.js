@@ -25,6 +25,7 @@ const store = createStore(allReducers);
 // );
 
 ReactDOM.render(
+	// Con <Provider>, tienes acceso a través del provider, a la data de "Store"
 	<Provider store={store}>
 		<App />
 	</Provider>

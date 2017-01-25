@@ -18,4 +18,12 @@ class UserList extends Component {
 	}
 }
 
-export default UserList;
+// La funcion "mapStateToProps" coge un "state" del "store" y lo envia al "component" como "props", ahora lo podriamos llamar con "this.props.users"
+function mapStateToProps(state) {
+	return {
+		users: state.users
+	}
+}
+
+// Ahora exportamos como UserList el mapStateToProps, que es la lista de Usuarios
+export default connect(mapStateToProps)(UserList);
