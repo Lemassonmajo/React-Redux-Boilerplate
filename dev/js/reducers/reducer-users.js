@@ -1,5 +1,5 @@
 // devuelve un array de Usuarios
-export default funcion () {
+export default function() {
 	return [
 		{
 			id: 1,
@@ -24,7 +24,7 @@ export default funcion () {
 			age: 43,
 			description: "Chef",
 			thumbnail: "https://i.imgur.com/7yUvePI.jpg"
-		},
+		}
 
 	]
 }

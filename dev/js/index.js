@@ -1,9 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from "react-dom";
-// import {Provider} from 'react-redux';
 
-//Esto un objeto grande de JavaScript que contiene todos los objetos de JavaScript
+// Es necesarío para el deploy de la info
+import {Provider} from 'react-redux';
+
+// Esto un objeto grande de JavaScript que contiene todos los objetos de JavaScript
+// Hace que el store sea accesible para todos los contenedores
 import {createStore} from 'redux';
 // import thunk from 'redux-thunk';
 // import promise from 'redux-promise';
@@ -11,7 +14,9 @@ import {createStore} from 'redux';
 
 // importa los reducers, de la carpeta "reducers", por defecto lee el archivo "index.js"
 import allReducers from './reducers';
-// import App from './components/App';
+
+// importamos la carpeta donde tenemos los usuarios, etc... y lo llamamos App, para poder meterlo en el html
+import App from './components/App';
 
 // const logger = createLogger();
 const store = createStore(allReducers);
@@ -19,4 +24,8 @@ const store = createStore(allReducers);
 //     applyMiddleware(thunk, promise, logger)
 // );
 
-ReactDOM.render(<h1>Hello</h1>, document.getElementById('root'));
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>
+	, document.getElementById('root'));
