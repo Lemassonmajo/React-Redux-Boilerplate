@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from "react-dom";
 
-// Es necesarío para el deploy de la info
+// Creamos en "Provider". Es necesarío para el deploy de la info
 import {Provider} from 'react-redux';
 
 // Esto un objeto grande de JavaScript que contiene todos los objetos de JavaScript
@@ -15,8 +15,8 @@ import {createStore} from 'redux';
 // importa los reducers, de la carpeta "reducers", por defecto lee el archivo "index.js"
 import allReducers from './reducers';
 
-// importamos la carpeta donde tenemos los usuarios, etc... y lo llamamos App, para poder meterlo en el html
-import App from './components/App';
+// importamos el componente "app", el cual será el index para el resto de componentes, para poder meterlo en el html
+import App from './components/app';
 
 // const logger = createLogger();
 const store = createStore(allReducers);
